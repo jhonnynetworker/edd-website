@@ -94,10 +94,16 @@
                     <br>
                 </p>
                 <p>
-                    <abbr title="Telefone">Telefone</abbr>:
+                    <span class="fa fa-phone"></span>
+                    <abbr title="Telefone">
+                        <strong>Telefone</strong>
+                    </abbr>:
                     <a href="">(+238) 9970886</a>
                     <br/>
-                    <abbr title="Email">Email</abbr>:
+                    <abbr title="Email">
+                        <span class="fa fa-envelope"></span>
+                        <strong>Email</strong>
+                    </abbr>:
                     <a href="mailto:comercial@eddservicos.com">comercial@eddservicos.com
                     </a>
                 </p>
@@ -123,35 +129,49 @@
                     <small class="text-danger" style="font-size:13px">*Todos campos s&atilde;o obrigat&oacute;rios.</small>
                 </h4>
 
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form name="productForm" novalidate
+                    ng-submit="submit(productForm)">
                     <div class="control-group form-group">
                     <div class="controls">
                         <label><strong>Nome</strong></label>
-                        <input type="text" class="form-control" id="name" required data-validation-required-message="Nome &eacute; obrigat&oacute;rio.">
+                        <input type="text" class="form-control" 
+                            id="name" required 
+                            data-validation-required-message="Nome &eacute; obrigat&oacute;rio." 
+                            ng-model="reqObj.name"
+                        >
                         <p class="help-block"></p>
                     </div>
                     </div>
                     <div class="control-group form-group">
                     <div class="controls">
                         <label><strong>Telefone</strong></label>
-                        <input type="tel" class="form-control" id="phone" required data-validation-required-message="Telefone &eacute; obrigat&oacute;rio.">
+                        <input type="tel" class="form-control" id="phone" required 
+                            data-validation-required-message="Telefone &eacute; obrigat&oacute;rio."
+                            ng-model="reqObj.phone"
+                        >
                     </div>
                     </div>
                     <div class="control-group form-group">
                     <div class="controls">
                         <label><strong>Email</strong></label>
-                        <input type="email" class="form-control" id="email" required data-validation-required-message="Email &eacute; obrigat&oacute;rio">
+                        <input type="email" class="form-control" id="email" required 
+                            data-validation-required-message="Email &eacute; obrigat&oacute;rio"
+                            ng-model="reqObj.email">
                     </div>
                     </div>
                     <div class="control-group form-group">
                     <div class="controls">
                         <label><strong>Mensagem</strong></label>
-                        <textarea rows="8" cols="100" class="form-control" id="message" required data-validation-required-message="Mensagem &eacute; obrigat&oacute;rio" maxlength="999" style="resize:none"></textarea>
+                        <textarea rows="8" cols="100" class="form-control" id="message" required 
+                            data-validation-required-message="Mensagem &eacute; obrigat&oacute;rio" 
+                            maxlength="999" 
+                            style="resize:none"
+                            ng-model="reqObj.msg"></textarea>
                     </div>
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-success" id="sendMessageButton">Enviar</button>
+                    <button type="submit" class="btn btn-success">Enviar</button>
                 </form>
             </div>
         </div>

@@ -46,8 +46,17 @@ angular.module('app')
     var prodCode=urlParams.get("code");
     var product=SERVICE_DB[prodCode];
 
-    console.info("product: ", product);
     $scope.product=product;
+    $scope.reqObj={};
+
+    $scope.submit = function (form) {
+        if (form.$invalid) {
+            console.info("bad form", form);
+            return;
+        }
+
+        console.info("reqObj", $scope.reqObj);
+    }
 });
 
 function items() {
