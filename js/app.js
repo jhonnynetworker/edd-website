@@ -97,7 +97,17 @@ var SERVICE_DB={
           "A EDD – Serviços disponibiliza serviços de dissuasão de pássaros, respeitando as normas ambientais e de protecção de animais. Os nossos produtos para controlo de pássaros são 100% naturais, não tóxicos, seguros para o homem, não causando quaisquer danos para espécies não alvo ou o  meio ambiente.",
           "Contacte-nos agora  e  tenha um suporte  técnico gratuito ou  peça uma avaliação das suas instalações sem qualquer compromisso."
       ]
-    }
+    },
+    PROD_S10: {
+        id: "PROD_S10",
+        title: "Higiene e Segurança Alimentar",
+        img: "./image/higiene-seg-alimentar.jpeg"
+    },
+    PROD_S11: {
+        id: "PROD_S11",
+        title: "Formação & capacitação",
+        img: "./image/svs/formacao.jpg"
+    },
 };
 
 angular.module('app')
@@ -121,11 +131,15 @@ angular.module('app')
 .controller("ServiceItemCtrl", function ($scope) {
     var urlParams = new URLSearchParams(window.location.search);
     var prodCode=urlParams.get("code");
+
+    console.info("product-code: ", prodCode);
     var product=SERVICE_DB[prodCode];
 
     $scope.product=product;
-    $scope.product.description_prod = product.description.splice(0, product.description.length-1);
-    $scope.product.description_call = product.description[product.description.length-1]; // last
+    if (product.description) {
+        $scope.product.description_call = product.description[product.description.length-1]; // last
+        $scope.product.description_prod = product.description.splice(0, product.description.length-1);
+    }
 })
 ;
 

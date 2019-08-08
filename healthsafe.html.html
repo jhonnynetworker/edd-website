@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>
-      EDD Serviços – Higiene e Segurança Alimentar
+      EDD – Serviços de desinfestação e desratização Lda.
   </title>
 
   <!-- Bootstrap core CSS -->
@@ -72,24 +72,15 @@
         <div class="row">
     
           <div class="col-md-8">
-            <img class="img-fluid" src="./image/higiene-seg-alimentar.jpeg" alt="">
+            <img class="img-fluid" src="{{product.img}}" alt="">
           </div>
     
           <div class="col-md-4">
-            <p>
-                A   Segurança   Alimentar   surge   actualmente   como   uma   das   principais
-                preocupações da Indústria Alimentar.
-            </p>
-            <p>
-                De uma forma geral, em Cabo Verde,
-                as   condições   de   higiene   e   salubridade   em   todas   as   fases   da   cadeia
-                alimentar podem ser mais satisfatórias, reduzindo assim o
-                risco de contaminação dos alimentos, e consequências negativas na
-                saúde pública.
-            </p>
-            <p>
-                Contacte-nos agora  e  tenha um suporte  técnico gratuito ou  peça uma
-                avaliação das suas instalações sem qualquer compromisso.
+            <h3 class="my-3">
+                {{product.title}}
+            </h3>
+            <p ng-repeat="p in product.description_prod">
+              {{p}}
             </p>
 
             <a class="btn btn-lg btn-eddred btn-block" href="checkout.html?code={{product.id}}"> <span class="fa fa-phone"></span> Solicitar Serviço</a>
@@ -125,61 +116,6 @@
         <!-- /.row -->
         
         <div class="row" style="margin-top:35px;">
-            <div class="col-md-12">
-                <h3 class="my-3">
-                    Saiba Mais
-                </h3>                         
-            </div>
-
-            <div class="col-md-8">
-                <p>
-                    Face à pressão da regulamentação Cabo-verdiana em matéria de segurança
-                    alimentar por um lado e às exigências do mercado, e à globalização dos
-                    mercados e complexidade da cadeia de fornecimento por outro, os desafios
-                    para as empresas do sector são enormes para se manterem no mercado de
-                    uma forma sustentável e competitiva.
-                </p>
-                <p>
-                    Para   apoiar   os   seus   clientes   nesta   área,   a   Edd   Serviços   passa   a
-                    disponibilizar os serviços de consultoria em higiene e segurança alimentar,
-                    que inclui:
-                </p>
-
-                <ul>
-                  <li style="margin-bottom:15px;"> 
-                      Realização de auditorias de diagnóstico de higiene e segurança alimentar,
-                      para   caracterização   do   estabelecimento   e   identificação   das   fases   das
-                      operações em que podem verificar-se riscos alimentar.
-                  </li>
-
-                  <li style="margin-bottom:15px;"> 
-                      Implementação de sistemas de segurança alimentar, onde se incluem os
-                      planos de higiene, definição e aplicação do código de Boas Práticas, as
-                      condições   das   instalações   e   equipamentos,   o   controlo   da   água   ou   de
-                      matérias-primas utilizadas e a formação do pessoal
-                  </li>
-
-                  <li style="margin-bottom:15px;"> 
-                      Implementação   de   Procedimentos   de   Boas   Práticas   de   Higiene   e
-                      Segurança Alimentar: Auditorias Técnicas (auditoria diagnóstico da empresa
-                      para   avaliação   de   conformidade   em   relação   ao   que   está   descrito   nas
-                      disposições regulamentares em matéria de higiene e segurança alimentar;
-                      auditorias de acompanhamento.
-                  </li>
-
-                  <li style="margin-bottom:15px;"> 
-                      Acções de Sensibilização (sensibilização
-                      para a importância das Boas Práticas de Higiene e Fabrico; noções básicas
-                      de microbiologia; legislação; metodologia HACCP        
-                  </li>
-                </ul>
-
-                <p class="lead">
-                    Contacte-nos agora  e  tenha um suporte  técnico gratuito ou  peça uma
-                    avaliação das suas instalações sem qualquer compromisso.
-                </p>
-            </div>
-
             <div class="col-md-12">
                 <h3 class="my-3">
                     Equipamentos
