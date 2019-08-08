@@ -135,47 +135,76 @@
 
                 <form name="productForm" novalidate
                     ng-submit="submit(productForm)">
-                    <div class="control-group form-group">
-                    <div class="controls">
-                        <label><strong>Nome</strong></label>
-                        <input type="text" class="form-control" 
-                            id="name" required 
-                            data-validation-required-message="Nome &eacute; obrigat&oacute;rio." 
-                            ng-model="reqObj.name"
-                        >
-                        <p class="help-block"></p>
+
+                    <div class="alert alert-warning text-center" ng-if="loading_request">
+                        <i class="fa fa-refresh fa-spin"></i>
+                        Processando
                     </div>
+
+                    <div class="alert alert-danger text-center" ng-if="error">
+                        <i class="fa fa-times"></i>
+                        <h4>A sua solicitação não pode ser processada.</h4>
+                        Verifique todos os campos.
                     </div>
-                    <div class="control-group form-group">
-                    <div class="controls">
-                        <label><strong>Telefone</strong></label>
-                        <input type="tel" class="form-control" id="phone" required 
-                            data-validation-required-message="Telefone &eacute; obrigat&oacute;rio."
-                            ng-model="reqObj.phone"
-                        >
+
+                    <div class="alert alert-success text-center" ng-if="success">
+                        <i class="fa fa-check" style="font-size:50px;" ></i>
+                        <br/>
+                        <h3>
+                            A sua solicitação foi enviada com sucesso
+                        </h3>
+                        Entraremos em contacto em minutos.
                     </div>
+
+                    <div ng-if="!is_done">
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label><strong>Nome</strong></label>
+                                <input type="text" class="form-control" 
+                                    id="name" required 
+                                    data-validation-required-message="Nome &eacute; obrigat&oacute;rio." 
+                                    ng-model="reqObj.name"
+                                >
+                                <p class="help-block"></p>
+                            </div>
+                            </div>
+        
+                            <div class="control-group form-group">
+                                <div class="controls">
+                                    <label><strong>Telefone</strong></label>
+                                    <input type="tel" class="form-control" id="phone" required 
+                                        data-validation-required-message="Telefone &eacute; obrigat&oacute;rio."
+                                        ng-model="reqObj.phone"
+                                    >
+                                </div>
+                            </div>
+        
+                            <div class="control-group form-group">
+                                <div class="controls">
+                                    <label><strong>Email</strong></label>
+                                    <input type="email" class="form-control" id="email" required 
+                                        data-validation-required-message="Email &eacute; obrigat&oacute;rio"
+                                        ng-model="reqObj.email">
+                                </div>
+                            </div>
+        
+                            <div class="control-group form-group">
+                                <div class="controls">
+                                    <label><strong>Mensagem</strong></label>
+                                    <textarea rows="8" cols="100" class="form-control" id="message" required 
+                                        data-validation-required-message="Mensagem &eacute; obrigat&oacute;rio" 
+                                        maxlength="999" 
+                                        style="resize:none"
+                                        ng-model="reqObj.msg"></textarea>
+                                </div>
+                            </div>                
                     </div>
-                    <div class="control-group form-group">
-                    <div class="controls">
-                        <label><strong>Email</strong></label>
-                        <input type="email" class="form-control" id="email" required 
-                            data-validation-required-message="Email &eacute; obrigat&oacute;rio"
-                            ng-model="reqObj.email">
-                    </div>
-                    </div>
-                    <div class="control-group form-group">
-                    <div class="controls">
-                        <label><strong>Mensagem</strong></label>
-                        <textarea rows="8" cols="100" class="form-control" id="message" required 
-                            data-validation-required-message="Mensagem &eacute; obrigat&oacute;rio" 
-                            maxlength="999" 
-                            style="resize:none"
-                            ng-model="reqObj.msg"></textarea>
-                    </div>
-                    </div>
-                    <div id="success"></div>
-                    <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-success">Enviar</button>
+
+                    <button type="submit" class="btn btn-success"
+                        ng-if="!is_done"
+                        ng-disabled="loading_request">
+                        Enviar
+                    </button>
                 </form>
             </div>
         </div>

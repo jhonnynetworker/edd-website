@@ -110,6 +110,10 @@ var SERVICE_DB={
     },
 };
 
+var conf = {
+    PUBLIC_API: "https://publica.enterstarts.com"
+};
+
 angular.module('app')
 .controller("CheckoutCtrl", function ($http, $scope) {
     var urlParams = new URLSearchParams(window.location.search);
@@ -117,7 +121,10 @@ angular.module('app')
     var product=SERVICE_DB[prodCode];
 
     $scope.product=product;
-    $scope.reqObj={};
+    $scope.reqObj={
+        msg: "Desejo solicitar o servico de " + product.title
+    };
+    $scope.is_done=false;
 
     $scope.submit = function (form) {
         if (form.$invalid) {
@@ -125,7 +132,27 @@ angular.module('app')
             return;
         }
 
-        console.info("reqObj", $scope.reqObj);
+        $scope.reqObj.service_id=product.id;
+        $scope.reqObj.service_descr=product.title;
+        $scope.reqObj.org_id="1a01bde072f04dac";
+
+        $scope.loading_request=true;
+        $scope.success=false;
+        $scope.error=false;
+
+        $http.post(conf.PUBLIC_API+"/request-service", $scope.reqObj)
+        .then(function (Resp) {
+            console.info("response: ", Resp);
+            var obj=Resp.data;
+            $scope.loading_request=false;
+            $scope.success=true;
+            $scope.is_done=true;
+
+        }, function (Err) {
+            console.error("Err: ", Err);     
+            $scope.loading_request=false;
+            $scope.error=true;       
+        });
     }
 })
 .controller("ServiceItemCtrl", function ($scope) {
