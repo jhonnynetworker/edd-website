@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>
+      EDD – Serviços de desinfestação e desratização Lda.
+  </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body ng-controller="ServiceItemCtrl">
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-eddred fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <strong>EDD SERVIÇOS</strong>
+        </a>
+  
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <p class="pull-right navbar-brand" style="margin-top:10px">
+                  <strong>O bem estar é seu, o controlo é nosso!</strong>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <ol class="breadcrumb" style="margin-top:25px;">
+      <li class="breadcrumb-item">
+        <a href="index.html">P&aacute;gina Inicial</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="services.html">
+            Servi&ccedil;os
+        </a>
+      </li>
+      <li class="breadcrumb-item active">
+        {{product.title}}
+      </li>
+    </ol>
+  
+  <!-- Page Content -->
+  <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">
+          {{product.title}}
+          <!-- <small>Subheading</small> -->
+        </h1>
+        
+        <!-- Portfolio Item Row -->
+        <div class="row">
+    
+          <div class="col-md-8">
+            <img class="img-fluid" src="{{product.img}}" alt="">
+          </div>
+    
+          <div class="col-md-4">
+            <h3 class="my-3">
+                {{product.title}}
+            </h3>
+            <p ng-repeat="p in product.description_prod">
+              {{p}}
+            </p>
+
+            <a class="btn btn-lg btn-eddred btn-block" href="checkout.html?code={{product.id}}"> <span class="fa fa-phone"></span> Solicitar Serviço</a>
+
+            <h3 class="my-3" style="margin-top:25px;">Contacte-nos</h3>
+            <p>
+                {{product.description_call}}
+            </p>
+
+            <p>
+                <span class="fa fa-phone"></span>
+                <abbr title="Telefone">
+                    <strong>Telefone</strong>
+                </abbr>:
+                <a href="">(+238) 9970886</a>
+                <br/>
+                <abbr title="Email">
+                    <span class="fa fa-envelope"></span>
+                    <strong>Email</strong>
+                </abbr>:
+                <a href="mailto:comercial@eddservicos.com">comercial@eddservicos.com
+                </a>
+            </p>
+
+            <p>
+                <abbr title="Hours">Hor&aacute;rio de funcionamento</abbr>:
+                <br />
+                Segunda - Sabado: 8:00 &aacute;s 18:00
+            </p>
+        </div>
+    
+        </div>
+        <!-- /.row -->
+        
+        <div class="row" style="margin-top:35px;">
+            <div class="col-md-12">
+                <h3 class="my-3">
+                    Equipamentos
+                </h3>          
+            </div>
+            
+          <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            </a>
+          </div>
+    
+          <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            </a>
+          </div>
+    
+          <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            </a>
+          </div>
+    
+          <div class="col-md-3 col-sm-6 mb-4">
+            <a href="#">
+              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            </a>
+          </div>
+    
+        </div>
+        <!-- /.row -->
+    
+      </div>
+      <!-- /.container -->
+    
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; EDD Serviços 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144976163-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-144976163-1');
+</script>
+</body>
+
+</html>

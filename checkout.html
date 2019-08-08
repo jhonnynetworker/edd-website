@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body ng-controller="CheckoutCtrl">
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-eddred fixed-top">
         <div class="container">
@@ -51,11 +51,14 @@
         <li class="breadcrumb-item">
             <a href="services.html">Serviços</a>
         </li>
+        <li class="breadcrumb-item">
+            <a href="service-item.html?code={{product.id}}">{{product.title}}</a>
+        </li>
         <li class="breadcrumb-item active">Checkout</li>
     </ol>
     
     <!-- Page Content -->
-    <div class="container" ng-controller="CheckoutCtrl">
+    <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">
