@@ -24,7 +24,7 @@ var SERVICE_DB={
     PROD_C03: {
         id: "PROD_C03",
       "title": "Controlo de Roedores",
-      "img": "./image/svs/IMG_5250.JPG",
+      "img": "./image/IMG_7219.JPG",
       description: [
           "Para um controlo eficaz de roedores é fundamental a correcta identificação da espécie, o conhecimento da sua biologia, de seus hábitos comportamentais, suas habilidades e capacidades físicas. É preciso uma correcta avaliação do espaço a tratar.",
           "Técnicas ou métodos de controlo de roedores ineficazes podem ter um efeito inverso, resultando no aumento das colónias, agravando ainda mais a situação.",
