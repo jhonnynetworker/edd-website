@@ -24,6 +24,7 @@
 <body ng-controller="ServiceItemCtrl">
 
   <!-- Navigation -->
+  <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-eddred fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -33,10 +34,24 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="about-us.html">Quem Somos</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="services.html">Servi&ccedil;os</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="mission.html">Miss&atilde;o</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contacto</a>
+                </li>
+            </ul>
         </div>
       </div>
     </nav>
-  
+    
     <ol class="breadcrumb" style="margin-top:25px;">
       <li class="breadcrumb-item">
         <a href="index.html">P&aacute;gina Inicial</a>
@@ -137,27 +152,10 @@
                 </h3>          
             </div>
             
-          <div class="col-md-3 col-sm-6 mb-4">
+          <div class="col-md-3 col-sm-6 mb-4"
+            ng-repeat="obj in product.eList">
             <a href="#">
-              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-          </div>
-    
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-          </div>
-    
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-            </a>
-          </div>
-    
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-              <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+              <img width="200px" height="200px" ng-src="{{obj}}" alt="">
             </a>
           </div>
     

@@ -21,7 +21,7 @@
 
 </head>
 
-<body ng-controller="ContactCtrl">
+<body ng-controller="ServiceItemCtrl">
 
   <!-- Navigation -->
   <!-- Navigation -->
@@ -41,10 +41,10 @@
                   <li class="nav-item">
                     <a class="nav-link" href="services.html">Servi&ccedil;os</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="mission.html">Miss&atilde;o</a>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contacto</a>
                   </li>
               </ul>
@@ -58,7 +58,7 @@
       </li>
       <li class="breadcrumb-item">
         <a href="">
-            Contacto
+            Missão
         </a>
       </li>
     </ol>
@@ -68,6 +68,34 @@
     <!-- Features Section -->
         <div class="row" style="margin-top: 25px;">
             <div class="col-lg-6">
+                <h2 style="color:#8F1C1D">Problemas com pragas? </h2>
+                <strong>Recorra a um especialista </strong>
+                <ul>
+                
+                <li>Controlo de pragas</li>
+                <li>Controlo de aves</li>
+                <li>Higiene e segurança alimentar</li>
+                <li>Aparelhos com segurança, associados a biocidas anticoagulantes de segunda geração</li>
+                </ul>
+                <p style="font-weight:bold;">EDD Serviços propõe um serviço completo que associa tratamento e controlo, com resultados satisfatórios a curto e longo prazo.</p>
+            </div>
+            <div class="col-lg-6 pull-right">
+                <img class="img-fluid rounded pull-right" src="./image/EDD.1.png" alt="">
+            </div>
+        </div>
+        <!-- /.row -->
+      
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-8 mb-5">
+                <h2>A nossa missão</h2>
+                <hr>
+                <p>
+                    Somos   uma   empresa   voltada   para   o   mercado   de   combate,   controle   e
+                    prevenção de pragas, comprometido com o desenvolvimento e apoio aos
+                    nossos clientes, objetivando o seu crescimento com ética e responsabilidade
+                    ecológica e social.
+                </p>
+
                 <h2>Porque ser um cliente EDD</h2>
                 <hr>
                 <p>
@@ -88,98 +116,9 @@
                     uma das nossas características marcantes, e por isso, acreditamos que a
                     nossa filosofia de trabalho vai de encontro ao perfil das suas necessidades.
                 </p>
-            </div>
-            <div class="col-lg-6 pull-right">
-                <img class="img-fluid rounded pull-right" src="./image/EDD.1.png" alt="">
-            </div>
-        </div>
-        <!-- /.row -->
-      
-        <div class="row" style="margin-top: 25px;">
-            <div class="col-md-8 mb-5">
-                <h2>Entre em contacto conosco:</h2>
-                <hr>
-                <div class="well" style="display:table;background-color: #f4f4f4;border-radius:4px;padding:15px;">
-                    <h4 style="margin-bottom:25px;">
-                        Preencha o formul&aacute;rio para entrar em contacto conosco:<br/>
-                        <small class="text-danger" style="font-size:13px">*Todos campos s&atilde;o obrigat&oacute;rios.</small>
-                    </h4>
-    
-                    <form name="contactForm" novalidate
-                        ng-submit="submit(contactForm)">
-    
-                        <div class="alert alert-warning text-center" ng-if="loading_request">
-                            <i class="fa fa-refresh fa-spin"></i>
-                            Processando
-                        </div>
-    
-                        <div class="alert alert-danger text-center" ng-if="error">
-                            <i class="fa fa-times"></i>
-                            <h4>A sua solicitação não pode ser processada.</h4>
-                            Verifique todos os campos.
-                        </div>
-    
-                        <div class="alert alert-success text-center" ng-if="success">
-                            <i class="fa fa-check" style="font-size:50px;" ></i>
-                            <br/>
-                            <h3>
-                                A sua mensagem foi enviada com sucesso
-                            </h3>
-                            Entraremos em contacto em breve.
-                        </div>
-    
-                        <div ng-if="!is_done">
-                            <div class="control-group form-group">
-                                <div class="controls">
-                                    <label><strong>Nome</strong></label>
-                                    <input type="text" class="form-control" 
-                                        id="name" required 
-                                        data-validation-required-message="Nome &eacute; obrigat&oacute;rio." 
-                                        ng-model="obj.name"
-                                    >
-                                    <p class="help-block"></p>
-                                </div>
-                                </div>
-            
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label><strong>Telefone</strong></label>
-                                        <input type="tel" class="form-control" id="phone" required 
-                                            data-validation-required-message="Telefone &eacute; obrigat&oacute;rio."
-                                            ng-model="obj.phone"
-                                        >
-                                    </div>
-                                </div>
-            
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label><strong>Email</strong></label>
-                                        <input type="email" class="form-control" id="email" required 
-                                            data-validation-required-message="Email &eacute; obrigat&oacute;rio"
-                                            ng-model="obj.email">
-                                    </div>
-                                </div>
-            
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label><strong>Mensagem</strong></label>
-                                        <textarea rows="8" cols="100" class="form-control" id="message" required 
-                                            data-validation-required-message="Mensagem &eacute; obrigat&oacute;rio" 
-                                            maxlength="999" 
-                                            style="resize:none"
-                                            ng-model="obj.msg"></textarea>
-                                    </div>
-                                </div>                
-                        </div>
-    
-                        <button type="submit" class="btn btn-success"
-                            ng-if="!is_done"
-                            ng-disabled="loading_request">
-                            Enviar
-                        </button>
-                    </form>
-                </div>
-    
+
+                
+
             </div>
 
             <div class="col-md-4 mb-5">
