@@ -135,8 +135,8 @@ var SERVICE_DB={
 };
 
 var conf = {
-    PUBLIC_API: "http://127.0.0.1:9000"
-    // PUBLIC_API: "https://publica.enterstarts.com"
+    // PUBLIC_API: "http://127.0.0.1:9000"
+    PUBLIC_API: "https://publica.enterstarts.com"
 };
 
 angular.module('app')
