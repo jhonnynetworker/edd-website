@@ -135,7 +135,7 @@ var SERVICE_DB={
 };
 
 var conf = {
-    // PUBLIC_API: "http://127.0.0.1:9000"
+    // PUBLIC_API: "http://127.0.0.1:9000",
     PUBLIC_API: "https://publica.enterstarts.com"
 };
 
@@ -157,15 +157,22 @@ angular.module('app')
             return;
         }
 
-        $scope.reqObj.service_id=product.id;
-        $scope.reqObj.service_descr=product.title;
-        $scope.reqObj.org_id="1a01bde072f04dac";
+        var obj = {
+            service_id: product.id,
+            service_descr: product.title,
+            org_id: "1a01bde072f04dac",
+            channel: "WEBSITE",
+            msg: $scope.reqObj.msg,
+            user_name: $scope.reqObj.name,
+            user_phone: $scope.reqObj.phone,
+            user_email: $scope.reqObj.email,
+        };
 
         $scope.loading_request=true;
         $scope.success=false;
         $scope.error=false;
 
-        $http.post(conf.PUBLIC_API+"/request-service", $scope.reqObj)
+        $http.post(conf.PUBLIC_API+"/request-service", obj)
         .then(function (Resp) {
             console.info("response: ", Resp);
             var obj=Resp.data;
@@ -180,6 +187,7 @@ angular.module('app')
         });
     }
 })
+
 .controller("ContactCtrl", function ($http, $scope) {
     var urlParams = new URLSearchParams(window.location.search);
     var prodCode=urlParams.get("code");
@@ -201,6 +209,7 @@ angular.module('app')
 
         var obj={
             org_id: '1a01bde072f04dac',
+            service_id: 'REQ_CONTACT',
             user_name: $scope.obj.name,
             user_email: $scope.obj.email,
             user_phone: $scope.obj.phone,
@@ -208,7 +217,7 @@ angular.module('app')
             channel: 'WEBSITE'
         };
 
-        $http.post(conf.PUBLIC_API+"/send-contact-msg", obj)
+        $http.post(conf.PUBLIC_API+"/request-service", obj)
         .then(function (Resp) {
             console.info("response: ", Resp);
             var obj=Resp.data;
