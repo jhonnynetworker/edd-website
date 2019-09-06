@@ -160,7 +160,10 @@ angular.module('app')
         var obj = {
             service_id: product.id,
             service_descr: product.title,
-            org_id: "1a01bde072f04dac",
+            // org_id: "1a01bde072f04dac",
+            org_id: "xbt2987cef990064470",
+            // user_id: "7907b68056c34abf", // ayrton-gomes
+            user_id: "cd390d71ee4043d6", // xbtfinex
             channel: "WEBSITE",
             msg: $scope.reqObj.msg,
             user_name: $scope.reqObj.name,
@@ -174,7 +177,6 @@ angular.module('app')
 
         $http.post(conf.PUBLIC_API+"/request-service", obj)
         .then(function (Resp) {
-            console.info("response: ", Resp);
             var obj=Resp.data;
             $scope.loading_request=false;
             $scope.success=true;
@@ -208,7 +210,10 @@ angular.module('app')
         $scope.error=false;
 
         var obj={
-            org_id: '1a01bde072f04dac',
+            // org_id: '1a01bde072f04dac',
+            org_id: "xbt2987cef990064470",
+            // user_id: "7907b68056c34abf", // ayrton-gomes
+            user_id: "cd390d71ee4043d6", // xbtfinex
             service_id: 'REQ_CONTACT',
             user_name: $scope.obj.name,
             user_email: $scope.obj.email,
